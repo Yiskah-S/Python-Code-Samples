@@ -1,3 +1,16 @@
+# Table of Contents
+- [Table of Contents](#table-of-contents)
+    - [1. Iterative Binary Search:](#1-iterative-binary-search)
+    - [2. Recursive Binary Search:](#2-recursive-binary-search)
+    - [3. Binary Search with Bounds:](#3-binary-search-with-bounds)
+    - [4. Binary Search with Custom Comparator:](#4-binary-search-with-custom-comparator)
+    - [5. Generic Binary Search (Finding the First Occurrence):](#5-generic-binary-search-finding-the-first-occurrence)
+    - [6. Generic Binary Search (Finding the Last Occurrence):](#6-generic-binary-search-finding-the-last-occurrence)
+    - [7. Binary Search with Early Exit:](#7-binary-search-with-early-exit)
+    - [8. Binary Search on Rotated Sorted Array:](#8-binary-search-on-rotated-sorted-array)
+    - [9. Binary Search with Duplicates (Find Any Occurrence):](#9-binary-search-with-duplicates-find-any-occurrence)
+  - [10. Binary Search with Lower and Upper Bound:](#10-binary-search-with-lower-and-upper-bound)
+
 ### 1. Iterative Binary Search:
 
 - **Pros**: Simple, efficient, and doesn't require extra memory.
@@ -237,3 +250,34 @@ def binary_search_any_occurrence(arr, target):
     return -1
 ```
 <br><br>
+
+## 10. Binary Search with Lower and Upper Bound:
+
+- **Pros**: Can be used to find the range of indices where a value lies in a sorted list.
+- **Cons**: Requires additional code for finding the lower and upper bounds.
+
+
+```python
+def binary_search_lower_bound(arr, target):
+    low, high = 0, len(arr) - 1
+    
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    
+    return low
+
+def binary_search_upper_bound(arr, target):
+    low, high = 0, len(arr) - 1
+    
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] <= target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    
+    return high

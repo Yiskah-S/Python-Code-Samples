@@ -1,4 +1,4 @@
-![Big-O Complexity](image.png)
+![Big-O Complexity](/images/image.png)
 
 <br><br>
 
@@ -67,4 +67,4 @@ def sum_digits(n):
     return total
 ```
 
-![Logs](image-1.png)
+![Logs](/images/image-1.png)
